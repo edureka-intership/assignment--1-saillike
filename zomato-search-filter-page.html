@@ -1,15 +1,211 @@
 <html lang="en">
     <head>
-        <title>Bootstrap Example</title>
+        <title>Zomato Search and Filter Page</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             
             <!-- CSS only -->
+            <link href="./css/style.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
             <!-- JavaScript Bundle with Popper -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    </head>
-    <body>
+   
+        </head>
+    <body >
+        <div class="container-fluid">
+                        
+            <nav class="navbar navbar-expand-sm navbar-dark" >
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <h2 class="rounded-circle" > e!</h2>
+                        
+                    </a>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    <div class="collapse navbar-collapse flex-grow-1 text-right" id="mynavbar">
+                        <ul class="navbar-nav ms-auto flex-nowrap">
+                            <li class="nav-item">
+                                <a class="nav-link login" href="#">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link create" href="#">Create an account</a>
+                            </li>
+                           
+                            
+                            
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                       <h1 class="placehead">Breakfast Place in Mumbai</h1> 
+                    </div>
+    
+                </div>
+                <div class="row">
+                    <div class="col-3 left-side shadow rounded">
+                       <h3 class="fliter">Filters</h3>
+                      
+                       <form method="post" name="filter-location">
+                        <p>Select Location</p>
+                       <select class="form-select form-select-md mb-3 location" aria-label=".form-select-lg example">
+                        <option selected>Select Location</option>
+                        <option value="1">Delhi</option>
+                        <option value="2">Mumbai</option>
+                        <option value="3">Indore</option>
+                        <option value="1">Bhopal</option>
+                        <option value="2">Bangalore</option>
+                        </select>
+                        </form>
+                        
+                        <form name="dish-type" class="dish-type">
+                          <p>Cuisine</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label cuisine" for="flexCheckDefault" >
+                                  North Indian
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label cuisine" for="flexCheckChecked">
+                                  South Indian
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label cuisine" for="flexCheckChecked">
+                                  Chienese
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label cuisine" for="flexCheckDefault">
+                                  Fast Food
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label cuisine" for="flexCheckDefault">
+                                  Street Food
+                                </label>
+                              </div>
+                        </form>
+                        
+                        <form name="cost-for" class="cost-for">
+                          <p>Cost for Two</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  Less than 500
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  500 to 1000
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  1000 to 1500
+                                </label>
+                              </div>
+                        </form>
+                       
+                        <form name="price-filter" class="price-filter">
+                          <p>Cost for Two</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  Price low to high
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  Price high to low
+                                </label>
+                              </div>
+                        </form>
+                    </div>
+                    <div class="col-8 right-side">
+                        <div class="containar shadow resturant-detail" >
+                            <div class="row" >
+                                <div class="col-3">
+                                    <img src="./image/shutterstock_1154073754.png" width="120px" height="120px" class="rounded-corner">
+                                </div>
+                                <div class="col-9">
+                                    <h6>The Big Chili Cakery</h6>
+                                    <p class="resturant-name">Fort</p>
+                                    <p class="resturant-add">Shop 1, Plot D, Sammuridhi Complex, Chincholi </p>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-3 text-uppercase">Cuisine:</div>
+                                <div class="col-9">Bakery</div>
+                            </div>
+                            <div class="row">
+                              <div class="col-3 text-uppercase">Cost for Two:</div>
+                                <div class="col-9" >&#8377 700</div>
+                            </div>
+                         </div>
+                         <div class="containar shadow resturant-detail" >
+                            <div class="row" >
+                                <div class="col-3">
+                                    <img src="./image/shutterstock_1154073754.png" width="120px" height="120px" class="rounded-corner">
+                                </div>
+                                <div class="col-9">
+                                  <h6>The Big Chili Cakery</h6>
+                                  <p class="resturant-name">Fort</p>
+                                  <p class="resturant-add">Shop 1, Plot D, Sammuridhi Complex, Chincholi </p>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                              <div class="col-3 text-uppercase">Cuisine:</div>
+                              <div class="col-3 ">Bakery</div>
+                            </div>
+                            <div class="row">
+                              <div class="col-3 text-uppercase">Cost for Two:</div>
+                                <div class="col-9" >&#8377 700</div>
+                            </div>
+                         </div>
 
+                        
+                         <div class="containar page-navigation" style="margin-top: 25px;" >
+                                <ul class="pagination justify-content-center">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1"><</a>
+                                  </li>
+                                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">></a>
+                                  </li>
+                                </ul>
+                              
+                        </div>
+
+                    </div>
+                        
+                        
+                       
+    
+                </div>
+            </div>
+           
+        </div> 
         </body>
         </html>
